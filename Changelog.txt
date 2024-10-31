@@ -1,0 +1,175 @@
+== Changelog ==
+
+= 1.8.0 =
+New: Add start_locate option to allow a map to open at the current location
+Change: Update to Leaflet 1.9.4
+Change: Use Control.FullScreen plugin in place of Leaflet.Fullscreen which is no longer maintained.
+
+= 1.7.1 =
+Change: Added a workaround for scripts being out of order due to deferred JS. This was changed in WordPress 6.4
+
+= 1.7.0 =
+Bug: Fix gesture handling always being turned on when map leaves fullscreen
+Change: Limit popup height on markers to height of map.
+
+= 1.6.2 =
+Change: Always delay JS execution until page load is complete.
+
+= 1.6.1 =
+Bug: New files missing from 1.6.0 release added.
+
+= 1.6.0 =
+New: Add support for showing current location on map.
+Change: Move two items from global settings section to default settings section as they can be overridden.
+
+= 1.5.0 =
+New: Add option to support popup builders.
+Change: Update to Leaflet 1.8.0
+Change: Delay-load maps only if needed.
+
+= 1.4.5 =
+New: Add option to disable GPX waypoints.
+
+= 1.4.4 =
+Change: Apply the custom 'class' attribute to map, elevation and GPX link as well as map jump links.
+
+= 1.4.3 =
+New: Add a layer list option to allow the control to remain open.
+Fix: If a jump link is clicked for a marker not yet displayed due to layer hiding, add marker to map.
+
+= 1.4.2 =
+Fix: Prevent GPX tracks with labels causing map to jump on hover.
+New: Add `leisure` attribute to allow Leisure maps to be turned off in favour of Open Data.
+
+= 1.4.1 =
+Fix: Maps not displayed when included via some widget types.
+
+= 1.4.0 =
+New: Option for up to 30 numbered markers and 26 letter markers as well as coloured markers.
+New: Option to generate a list of markers below the map.
+New: Shortcode to generate a link to a map marker.
+New: Option to fly to a marker and open it when a link is clicked.
+New: WordPress filter hook at the end of map output generation.
+Change: Improved auto-fit to markers.
+Change: Further restructure of the JS interface.
+Change: Remove confusing 'custom' print option.
+Change: Tolerates spaces in lat/long and reversed lat/long.
+Fix: Gesture handling was not being disabled in full screen mode.
+Fix: Switching layer initial off state was being ignored.
+
+= 1.3.1 =
+Fix breakage of print and fullscreen
+
+= 1.3.0 =
+Restructure the JS interface to improve maintainability and reduce page load time.
+Improved operation with delay-loaded javascript.
+Option to show start and end markers on GPX tracks.
+Option to override the use of premium data on individual maps.
+Option to override the choice of OpenData tile set on individual maps.
+Default track width cannot be blank.
+Update to leaflet-elevation 1.7.0.
+Update to leaflet-gesture-handling 1.3.5.
+Disable waypoint markers in elevation plots.
+Add missing SVG files from leaflet-elevation.
+
+= 1.2.3 =
+Private test release to improve operation with delay-loaded javascript.
+
+= 1.2.2 =
+Re-add absolute URL conversion for GPX and KML routes which got lost in 1.2.0
+
+= 1.2.1 =
+Support description popups on tracks and shapes as well as markers
+Option to show popups on hover
+Option to use gesture handling on mobile only
+Improved error handling and display
+Add missing elevation-position icon
+Use `-` instead of `!` to indicate layer initial state is off
+Allow non-integer value for track width
+
+= 1.2.0 =
+Add support for multiple GPX and KML layers, and for auto-fit to all layers added.
+Add a little padding when autofitting to be sure the bounds are contained.
+Add support for layer selection.
+Add a setting for zoom step size.
+Add a new shortcode to output a marker in approximately the current font size.
+If reading markers from a URL fails, try converting to the local path. Some servers will not allow PHP to read file content from a URL.
+Improvement to Leaflet 1.7.1 handling of clicks in Safari.
+Hide duplicate waypoint markers created by elevation profile.
+Update to leaflet-elevation 1.6.9
+
+= 1.1.3 =
+Fix elevation profile custom colour.
+Fix margins on elevation profiles following leaflet-elevation update.
+Compensate for the 20px stripped off the profile height by leaflet-elevation.js.
+Prevent profile heights < 30px being set accidentally.
+
+= 1.1.2 =
+Revert to Leaflet.fullscreen due to problems with iOS/Safari which prevented maps from showing at all.
+
+= 1.1.1 =
+Restore file accidentally removed from WordPress on commit
+
+= 1.1.0 =
+* Update to Leaflet 1.7.1
+* Update to leaflet-elevation 1.6.7
+* Update to leaflet-gesture-handling 1.2.1
+* Replace Leaflet EasyPrint with leaflet.browser.print
+* Replace Leaflet.fullscreen (mapbox) with leaflet.fullscreen (brunob) for better iOS compatibility
+* Improve consistency of auto-fit behaviour. Allow explicit zoom and centre to be set
+* Fix JS console error
+* Do not load unused Javascript files
+
+= 1.0.11 =
+* Allow .txt files to be added to the media library
+* Add a shortcode attribute to allow GPX track colour to be taken from the GPX file
+* Allow &quot; to be used to escape quotation marks in marker text
+
+= 1.0.10 =
+* Add an option to display map scale
+* Allow a default map height of 0 to allow external CSS to style the map
+* Better validation of settings
+* Improve error message when coordinates cannot be converted
+
+= 1.0.9 =
+* Add experimental support for printing maps
+* Add an option to disable gesture handling
+* Fix some PHP notice errors
+
+= 1.0.8 =
+* Fix zoom when displaying a single marker.
+
+= 1.0.7 =
+* Fix display of a single marker when marker colour is specified.
+* Change style tags to allow better co-existence with OpenSpace maps during testing.
+* Changes to internal directory structure.
+
+= 1.0.6 =
+* Reimplement elevation profile hiding to avoid display with fixed 600px width in some browsers.
+
+= 1.0.5 =
+* Use the default marker for waypoints in GPX files.
+* Hide elevation profile if there is no data to show.
+
+= 1.0.4 =
+* Fix a regression in the fullscreen button CSS
+
+= 1.0.3 =
+* Allow base-relative URLs and alternate scheme URLs
+* Add option to restrict panning to 45% of map width and height to avoid excessive tile usage
+* Add license files for all 3rd party components
+* Update to leaflet-elevation 1.3.7 to fix problem with multiple profiles on one page
+* Use leaflet-gpx in place of omnivore for GPX maps to ensure routes are processed as well as tracks
+* Improve CSS specificity to avoid some misalignments
+
+= 1.0.2 =
+* Fix double escaping of HTML in marker files
+* Ensure theme doesn't add box shadow to map tiles and markers
+
+= 1.0.1 =
+* Fix setting colour of elevation profiles
+* Avoid code re-ordering when used with caching plugins
+* Add version query to CSS and JS file fetches for cache busting
+
+= 1.0.0 =
+* Initial version, a ground-up rewrite to replace the plugin for the deprecated OS OpenSpace Maps service.

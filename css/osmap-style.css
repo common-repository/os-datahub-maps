@@ -1,0 +1,105 @@
+/**
+ * OS DataHub Maps
+ *
+ * Minimal style sheet for use with OS maps.
+ */
+
+.os-datahub-map {
+    border: 1px solid #DDD;
+    clear:both;
+    margin-bottom: 10px;
+}
+
+.os-datahub-map img {
+    box-shadow: none;
+}
+
+.os-datahub-map-target {
+    display: block;
+    position: relative;
+    visibility: hidden;
+}
+
+ul.os-datahub-map-marker-list {
+    padding-left: 0;
+    column-width: 300px;
+    -moz-column-width: 300px;
+    -webkit-column-width: 300px;
+    column-count: 8;
+    -moz-column-count: 8;
+    -webkit-column-count: 8;
+}
+
+ul.os-datahub-map-marker-list li {
+    list-style-type: none;
+}
+
+.os-datahub-elev {
+    margin-top: -10px;
+}
+
+.os-datahub-elev .elevation-control.elevation .background {
+    border-radius: 0;
+}
+
+.os-datahub-elev.os-datahub-hide-pane .mouse-focus-label {
+    visibility: hidden;
+}
+
+path.elevation-polyline {
+    visibility: hidden;
+}
+
+.os-datahub-map .leaflet-control-scale-line {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: #555;
+}
+
+.os-datahub-map .leaflet-control-scale-line:not(:first-child) {
+    border-top-color: #555;
+}
+
+.os-datahub-map .leaflet-left .leaflet-control-scale {
+    margin-left: 115px;
+}
+
+.os-datahub-map .leaflet-marker-icon.elevation-waypoint-marker {
+    display: none;
+}
+
+.os-api-logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 8px;
+    width: 90px;
+    height: 24px;
+    display: block;
+    z-index: 1000;
+    pointer-events: none;
+    background-image: url(./img/os-logo-maps.svg);
+    background-size: 90px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: initial;
+}
+
+@media only screen and (max-width: 650px) {
+    .os-datahub-map .leaflet-left .leaflet-control-scale {
+            margin-left: 5px;
+    }
+    .leaflet-control-attribution {
+        display: none;
+    }
+    .os-api-logo {
+        left: auto;
+        right: 0;
+    }
+}
+
+@media print {
+    .os-datahub-map {
+        border: none;
+    }
+}
